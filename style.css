@@ -1,0 +1,11 @@
+.mole {
+  height: 30px;
+  width: 30px;
+  background: teal;
+  border: 1px solid black;
+  float: left;
+}
+
+.row {
+    width: 99px;
+}
