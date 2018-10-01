@@ -1,11 +1,16 @@
 .mole {
-  height: 30px;
-  width: 30px;
-  background: teal;
+  background: url('mole.jpg');
+  background-size: 102px;
   border: 1px solid black;
   float: left;
+  min-height: 100px;
+  min-width:  100px;
 }
 
 .row {
-    width: 99px;
+  width: 310px;
+}
+
+.mole:hover {
+  background: url('x.png');
 }

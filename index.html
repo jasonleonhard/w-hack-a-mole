@@ -8,20 +8,25 @@
   <title>Wack-a-Mole</title>
 </head>
 <body>
+  <div id="total_container">
+    <b>Total:</b>
+    <b id="total">0</b>
+  </div>
+
   <div class="row">
-    <div class="mole" id="1" onClick="wack(this.id)">1</div>
-    <div class="mole" id="2" onClick="wack(this.id)">2</div>
-    <div class="mole" id="3" onClick="wack(this.id)">3</div>
+    <div id="1" class="mole" onClick="wack(this.id,this.value)"></div>
+    <div id="2" class="mole" onClick="wack(this.id,this.value)"></div>
+    <div id="3" class="mole" onClick="wack(this.id,this.value)"></div>
   </div>
   <div class="row">
-    <div class="mole" id="4" onClick="wack(this.id)">4</div>
-    <div class="mole" id="5" onClick="wack(this.id)">5</div>
-    <div class="mole" id="6" onClick="wack(this.id)">6</div>
+    <div id="4" class="mole" onClick="wack(this.id,this.value)"></div>
+    <div id="5" class="mole" onClick="wack(this.id,this.value)"></div>
+    <div id="6" class="mole" onClick="wack(this.id,this.value)"></div>
   </div>
   <div class="row">
-    <div class="mole" id="7" onClick="wack(this.id)">7</div>
-    <div class="mole" id="8" onClick="wack(this.id)">8</div>
-    <div class="mole" id="9" onClick="wack(this.id)">9</div>
+    <div id="7" class="mole" onClick="wack(this.id,this.value)"></div>
+    <div id="8" class="mole" onClick="wack(this.id,this.value)"></div>
+    <div id="9" class="mole" onClick="wack(this.id,this.value)"></div>
   </div>
 </body>
 <script src="app.js"></script>
