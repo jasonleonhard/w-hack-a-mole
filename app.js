@@ -1,1 +1,3 @@
-console.log('app.js')
+wack = (id) => {
+  console.log(id)
+}
