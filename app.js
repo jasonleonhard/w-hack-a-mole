@@ -3,6 +3,7 @@ let wack = (id, value) => {
 }
 
 var total = 0;
+
 updateScore = (id, value) => {
    document.getElementById(id).value = ++total;
    document.getElementById('total').innerHTML = document.getElementById(id).value
