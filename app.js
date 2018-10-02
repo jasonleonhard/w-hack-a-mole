@@ -1,5 +1,5 @@
-// when wacked update score
-let wack = (id) => {
+// when whacked update score
+let whack = (id) => {
   kill_mole(id)
 }
 
