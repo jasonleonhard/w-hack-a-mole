@@ -1,15 +1,30 @@
 // when wacked update score
-let wack = (id, value) => {
-  play()
-  updateScore(id, value)
+let wack = (id) => {
+  kill_mole(id)
 }
 
-// score total grabs current value and adds 1
-var total = 0;
-let updateScore = (id, value) => {
-   document.getElementById(id).value = ++total;
-   document.getElementById('total').innerHTML = document.getElementById(id).value
-   console.log("mole:", id, 'total:', total)
+// clicking a mole kills it, produces a sound, toggles the css class,
+  // changes the value and updates the inner html
+  // if no mole exists none is created on click
+let total = 0;
+let kill_mole = (id, value) => {
+  // grab element by id and check if class mole exists
+  let existance = document.getElementById(id)
+  switch (existance.className) {
+    case ("cell mole"):
+        play()
+        existance.classList.toggle("mole");
+        // console.log('mole killed')
+        document.getElementById(id).value = ++total;
+        document.getElementById('total').innerHTML = document.getElementById(id).value;
+        break;
+    case "cell":
+        // console.log('no mole')
+        document.getElementById(id).value = --total;
+        document.getElementById('total').innerHTML = document.getElementById(id).value
+        break;
+  }
+  // console.log("mole:", id, 'total:', total)
 }
 
 // random number between 1 and 9
@@ -19,9 +34,9 @@ let rand_num = () => {
 
 // given some id number, toggle css class to show/not show a mole
 let toggle_mole = (id) => {
-  var element = document.getElementById(id);
-  console.log(element.id)
+  let element = document.getElementById(id);
   element.classList.toggle("mole");
+  // console.log(element.id)
 }
 
 // every second toggle a mole by a random number
@@ -33,7 +48,7 @@ let show_rand_mole = () => {
 show_rand_mole() // call on page load
 
 // play audio when mole clicked
-play = () => {
-   var audio = document.getElementById("audio");
-   audio.play();
+let play = () => {
+  let audio = document.getElementById("audio");
+  audio.play();
 }
