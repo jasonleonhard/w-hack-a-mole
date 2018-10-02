@@ -43,9 +43,29 @@ let toggle_mole = (id) => {
 let show_rand_mole = () => {
   setInterval(function(){
     toggle_mole(rand_num())
+    check_if_mole_party()
   }, 1000);
 }
 show_rand_mole() // call on page load
+
+let check_if_mole_party = () => {
+  // console.log('party')
+  if (document.getElementById(1).className == "cell mole" &&
+      document.getElementById(2).className == "cell mole" &&
+      document.getElementById(3).className == "cell mole" &&
+      document.getElementById(4).className == "cell mole" &&
+      document.getElementById(5).className == "cell mole" &&
+      document.getElementById(6).className == "cell mole" &&
+      document.getElementById(7).className == "cell mole" &&
+      document.getElementById(8).className == "cell mole" &&
+      document.getElementById(9).className == "cell mole"
+  ) {
+    // break/quit/tally score/
+    console.log('FIN')
+    alert("FIN") // pause execution
+  }
+}
+
 
 // play audio when mole clicked
 let play = () => {
