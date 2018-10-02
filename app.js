@@ -1,7 +1,6 @@
 // when wacked update score
 let wack = (id, value) => {
-
-
+  play()
   updateScore(id, value)
 }
 
@@ -32,3 +31,9 @@ let show_rand_mole = () => {
   }, 1000);
 }
 show_rand_mole() // call on page load
+
+// play audio when mole clicked
+play = () => {
+   var audio = document.getElementById("audio");
+   audio.play();
+}
