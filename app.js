@@ -1,5 +1,7 @@
 // when wacked update score
 let wack = (id, value) => {
+
+
   updateScore(id, value)
 }
 
@@ -17,7 +19,7 @@ let rand_num = () => {
 }
 
 // given some id number, toggle css class to show/not show a mole
-let show_mole = (id) => {
+let toggle_mole = (id) => {
   var element = document.getElementById(id);
   console.log(element.id)
   element.classList.toggle("mole");
@@ -26,7 +28,7 @@ let show_mole = (id) => {
 // every second toggle a mole by a random number
 let show_rand_mole = () => {
   setInterval(function(){
-    show_mole(rand_num())
+    toggle_mole(rand_num())
   }, 1000);
 }
 show_rand_mole() // call on page load
