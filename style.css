@@ -1,5 +1,8 @@
 .mole {
   background: url('mole.jpg');
+}
+
+.cell {
   background-size: 102px;
   border: 1px solid black;
   float: left;
