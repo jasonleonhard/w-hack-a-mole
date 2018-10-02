@@ -15,12 +15,14 @@ let kill_mole = (id, value) => {
         play()
         existance.classList.toggle("mole");
         // console.log('mole killed')
-        document.getElementById(id).value = ++total;
+        total = total + 100
+        document.getElementById(id).value = total;
         document.getElementById('total').innerHTML = document.getElementById(id).value;
         break;
     case "cell":
         // console.log('no mole')
-        document.getElementById(id).value = --total;
+        total = total - 50
+        document.getElementById(id).value = total;
         document.getElementById('total').innerHTML = document.getElementById(id).value
         break;
   }
