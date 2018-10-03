@@ -42,7 +42,7 @@ let toggle_mole = (id) => {
 
 // if screen is full of moles game ends
 let check_if_mole_party = () => {
-  if (grab_array() > 10) { // if 11 moles game ends
+  if (grab_array() > 4) { // game ends if 5 or more moles
     let total = document.getElementById("total").innerHTML
 
     // option 1: write over whole dom, not ideal
