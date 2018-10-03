@@ -18,3 +18,8 @@
   font-size: 800;
   background: 'red';
 }
+
+.total {
+  font-size: 25px;
+  color: grey;
+}
