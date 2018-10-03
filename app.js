@@ -29,29 +29,41 @@ let kill_mole = (id, value) => {
   // console.log("mole:", id, 'total:', total)
 }
 
-// random number between 1 and 25
-let rand_num = () => {
-  return Math.floor(Math.random() * 25) + 1
+// random number between start and stop (ie: 1 and x)
+let rand_num = (stop) => {
+  return Math.floor(Math.random() * stop) + 1
 }
 
 // given some id number, toggle css class to show/not show a mole
 let toggle_mole = (id) => {
-  let element = document.getElementById(id);
-  element.classList.toggle("mole");
-  // console.log(element.id)
+  let e = document.getElementById(id);
+  e.classList.toggle("mole");
+  // console.log(e.id)
 }
 
-// every second toggle a mole by a random number
-let show_rand_mole = () => {
-  setInterval(function(){
-    toggle_mole(rand_num())
-    check_if_mole_party()
-  }, 1000);
-}
-show_rand_mole() // call on page load
+// toggle a mole (1 to 25) every second
+// let show_rand_mole = (seconds) => {
+//   setInterval(function(){
+//     toggle_mole(rand_num(1,25))
+//     check_if_mole_party()
+//   }, seconds);
+// }
+// show_rand_mole(1000)
 
+// recursive self executing function (ES5)
+// toggle a mole (1 to 25)
+// by a random number of seconds (0.001 to 1)
+(function show_rand_mole() {
+    var rand = rand_num(1000)
+    setTimeout(function() {
+        toggle_mole(rand_num(25))
+        check_if_mole_party()
+        show_rand_mole();
+    }, rand);
+}()); // call on page load
+
+// if screen is full of moles game ends
 let check_if_mole_party = () => {
-  // console.log('party')
   if (document.getElementById(1).className  == "cell mole" &&
       document.getElementById(2).className  == "cell mole" &&
       document.getElementById(3).className  == "cell mole" &&
@@ -83,7 +95,6 @@ let check_if_mole_party = () => {
     alert("FIN") // pause execution
   }
 }
-
 
 // play audio when mole clicked
 let play = () => {
